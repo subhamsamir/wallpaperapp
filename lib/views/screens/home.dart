@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaperapp/controller/apiOper.dart';
 import 'package:wallpaperapp/views/widgets/CustomAppBar.dart';
 import 'package:wallpaperapp/views/widgets/SearchBar.dart';
 
 import '../widgets/catBlock.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    //todo: implement initstate
+    super.initState();
+    ApiOperation.getTrendingWallpaper();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
