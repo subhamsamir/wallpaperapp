@@ -23,33 +23,56 @@ class CategoryScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-
-              Image.network("https://images.pexels.com/photos/7046979/pexels-photo-7046979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-              // Container(
-              //     padding: EdgeInsets.symmetric(
-              //         horizontal: 20), // margin from the search bar
-              //     child: SearchBar()),
-              // Container(
-              //   margin: EdgeInsets.symmetric(vertical: 10),
-              //   child: SizedBox(
-              //     height: 50,
-              //     width: MediaQuery.of(context).size.height,
-              //     child: ListView.builder(
-              //         scrollDirection: Axis.horizontal,
-              //         itemCount: 30,
-              //         itemBuilder: ((context, index) => CatBlock())),
-              //   ),
-              // ),
+              Stack(
+                children: [
+                  Image.network(
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,
+                      "https://images.pexels.com/photos/7046979/pexels-photo-7046979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                  Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.black38,
+                  ),
+                  Positioned(
+                    left: 150,
+                    top: 50,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Category",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "Mountains",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 height: MediaQuery.of(context).size.height,
                 child: GridView.builder(
                     physics: BouncingScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        mainAxisExtent: 400,
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 13,
-                        mainAxisSpacing: 10),
+                      mainAxisExtent: 400,
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 13,
+                      mainAxisSpacing: 10,
+                    ),
                     itemCount: 16,
                     itemBuilder: ((context, index) => Container(
                           height: 700,
